@@ -23,7 +23,7 @@ const getBooks = function () {
       const cardsArea = document.getElementById("cardsArea");
       for (let i = 0; i < books.length; i++) {
         cardsArea.innerHTML += `<div class="col-6 col-md-4 col-lg-2">
-        <div class="card" style="height: 685px">
+        <div class="card border border-primary" style="height: 685px">
         <img src="${books[i].img}" class="card-img-top">
         <div class="card-body">
         <div class="d-flex flex-column justify-content-between" style="height:100%">

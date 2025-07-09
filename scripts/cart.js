@@ -3,7 +3,7 @@ const generateItem = function (obj, i) {
   cartArea.insertAdjacentHTML(
     "beforeEnd",
     `<div
-                class="d-flex align-items-center my-2 border border-secondary p-3"
+                class="d-flex align-items-center my-2 border-bottom border-secondary p-3"
               >
                 <div class="w-25">${obj.title}</div>
                 <div class="w-25 text-center">${obj.category}</div>
@@ -19,7 +19,7 @@ const calculatePrice = function (price) {
                     </div>`;
 };
 
-if (localStorage.getItem("items")) {
+if (JSON.parse(localStorage.getItem("items")).length > 0) {
   const books = JSON.parse(localStorage.getItem("items"));
   let total = 0;
   books.forEach((element, index) => {
@@ -33,7 +33,7 @@ if (localStorage.getItem("items")) {
       const item = books[index];
       total = total - item.price;
       calculatePrice(total);
-      e.target.closest(".d-flex").remove();
+      e.target.closest(".d-flex").remove;
       books.splice(index, 1);
       localStorage.setItem("items", JSON.stringify(books));
     });
