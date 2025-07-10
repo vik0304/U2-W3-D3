@@ -15,7 +15,7 @@ const generateItem = function (obj, i) {
 const calculatePrice = function (price) {
   const priceArea = document.getElementById("priceArea");
   priceArea.innerHTML = `<div class="d-flex justify-content-end">
-                    <div>Total: ${price} $</div>
+                    <div>Total: ${price.toFixed(2)} $</div>
                     </div>`;
 };
 
@@ -33,7 +33,7 @@ if (JSON.parse(localStorage.getItem("items")).length > 0) {
       const item = books[index];
       total = total - item.price;
       calculatePrice(total);
-      e.target.closest(".d-flex").remove;
+      e.target.closest(".d-flex").remove();
       books.splice(index, 1);
       localStorage.setItem("items", JSON.stringify(books));
     });
